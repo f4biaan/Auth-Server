@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 
 // Create express server/app 
 const app = express();
@@ -13,6 +14,6 @@ app.use( express.json() );
 // rutas
 app.use('/api/auth', require('./routes/auth') );
 
-app.listen( 4000, () => {
-  console.log(`Server is running on port ${4000}`);
+app.listen( process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT}`);
 } );
